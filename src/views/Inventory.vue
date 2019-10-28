@@ -5,7 +5,6 @@
     </el-header>
     <el-main>
       <inventory-grid></inventory-grid>
-      <router-view />
     </el-main>
   </el-container>
 </template>
