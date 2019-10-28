@@ -1,0 +1,15 @@
+<template>
+  <el-container>
+    <el-header>
+      <h3>Dashaboard</h3>
+    </el-header>
+    <el-aside></el-aside>
+  </el-container>
+</template>
+
+
+<style scoped lang="scss">
+.bordered {
+  border: 1px solid #eee;
+}
+</style>
