@@ -34,4 +34,41 @@ It gives you simple bolerpate Admin UI to manage inventory, ui, and dashboard.
  2. Run 
  
     `$ npm run deploy`
-    
+  
+ ### Project Structure
+ 
+ src
+├── App.vue
+├── api
+│   ├── account.js
+│   ├── index.js
+│   └── inventory.js
+├── assets
+│   └── logo.png
+├── components
+│   ├── InventoryGrid.vue
+│   ├── LoginForm.vue
+│   ├── RegisterForm.vue
+│   └── SideNav.vue
+├── main.js
+├── router
+│   └── index.js
+├── store
+│   ├── index.js
+│   └── modules
+│       ├── account.js
+│       └── inventory.js
+├── styles
+│   └── global.scss
+├── utils
+│   ├── LocalStorage.js
+│   └── index.js
+└── views
+    ├── Dashboard.vue
+    ├── Home.vue
+    ├── Inventory.vue
+    ├── Login.vue
+    ├── NotFound.vue
+    ├── Orders.vue
+    ├── Register.vue
+    └── Settings.vue
