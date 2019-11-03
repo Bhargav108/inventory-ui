@@ -4,6 +4,19 @@
   </div>
 </template>
 
+<script>
+import axios from "axios";
+export default {
+  created() {
+    axios.interceptors.response.use(response => {
+      if (response.status === 401) this.$router.push("/login");
+      return response;
+    });
+    const isLoggedIn = this.$store.getters["auth/isLoggedIn"];
+    if (isLoggedIn) this.$routers.push("/");
+  }
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Helvetica, Arial, sans-serif;
@@ -26,11 +39,5 @@
       color: #42b983;
     }
   }
-}
-.bordered {
-  border: 1px solid rgb(177, 174, 174);
-}
-.sidebar {
-  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
 }
 </style>

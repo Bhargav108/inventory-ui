@@ -1,7 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Login from "../views/Login.vue";
+import Register from "../views/Register.vue";
 import NotFound from "../views/NotFound";
+
+import { storage } from "../utils";
 
 import Home from "../views/Home.vue";
 import Dashboard from "../views/Dashboard.vue";
@@ -15,7 +18,19 @@ const routes = [
   {
     path: "/login",
     name: "login",
-    component: Login
+    component: Login,
+    meta: {
+      public: true
+    }
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: Register,
+    meta: {
+      public: true,
+      register: true
+    }
   },
   {
     path: "*",
@@ -35,6 +50,7 @@ const router = new VueRouter({
       children: [
         {
           path: "/dashboard",
+          alias: "/",
           name: "dashboard",
           component: Dashboard
         },
@@ -56,6 +72,13 @@ const router = new VueRouter({
       ]
     }
   ]
+});
+
+router.beforeEach((to, from, next) => {
+  const authInfo = storage.get("auth");
+  if (to.meta.public) return next();
+  if (!authInfo) return next("/login");
+  return next();
 });
 
 export default router;

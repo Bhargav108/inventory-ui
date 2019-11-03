@@ -11,7 +11,7 @@
     <el-col :span="10" :xs="24">
       <el-row class="full_height" type="flex" align="middle">
         <el-col :span="24">
-          <login-form></login-form>
+          <register-form></register-form>
         </el-col>
       </el-row>
     </el-col>
@@ -19,11 +19,11 @@
 </template>
 
 <script>
-import LoginForm from "@/components/LoginForm.vue";
+import RegisterForm from "@/components/RegisterForm.vue";
 export default {
-  name: "Login",
+  name: "Register",
   components: {
-    LoginForm
+    RegisterForm
   }
 };
 </script>

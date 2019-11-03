@@ -3,8 +3,8 @@
     :default-active="defaultPage || '/dashboard'"
     @open="handleOpen"
     @close="handleClose"
-    :collapse="isCollapse"
-    router="true"
+    :collapse="isCollapsed"
+    :router="true"
   >
     <el-menu-item index="/dashboard">
       <i class="el-icon-menu"></i>
@@ -22,5 +22,28 @@
       <i class="el-icon-setting"></i>
       <span slot="title">Settings</span>
     </el-menu-item>
+    <el-menu-item @click="logout">
+      <i class="el-icon-switch-button"></i>
+      <span slot="title">Logout</span>
+    </el-menu-item>
   </el-menu>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      defaultPage: "/dashboard",
+      isCollapsed: false
+    };
+  },
+  methods: {
+    handleOpen() {},
+    handleClose() {},
+    logout() {
+      this.$store.dispatch("logout");
+      this.$router.push("/login");
+    }
+  }
+};
+</script>

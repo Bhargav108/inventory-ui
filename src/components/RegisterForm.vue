@@ -1,8 +1,11 @@
 <template>
   <div class="login-container">
-    <h3>Sign in to get started.</h3>
+    <h3>Sign up to get started.</h3>
     <!-- Here goes the form -->
     <el-form :model="form" ref="loginForm" :rules="rules">
+      <el-form-item label="name" prop="name">
+        <el-input v-model="form.name"></el-input>
+      </el-form-item>
       <el-form-item label="email" prop="email">
         <el-input v-model="form.email"></el-input>
       </el-form-item>
@@ -15,16 +18,13 @@
         </ul>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" size="medium" @click="submitLogin">Login</el-button>
+        <el-button type="primary" size="medium" @click="createAccount">Sign Up</el-button>
       </el-form-item>
-      <span>
-        <a href="#" style="color:grey;">Trouble logging in ?</a>
+      <span style="color:green;">
+        <a href="/login" style="color:green;">Already have an account ? Log in</a>
       </span>
       <br />
       <br />
-      <span>
-        <a href="/register" style="color:green;">New here ? Get started for free.</a>
-      </span>
     </el-form>
   </div>
 </template>
@@ -32,7 +32,7 @@
 <script>
 import { mapActions } from "vuex";
 export default {
-  name: "login-form",
+  name: "register-form",
   data() {
     return {
       form: {
@@ -40,6 +40,13 @@ export default {
         password: ""
       },
       rules: {
+        name: [
+          {
+            required: true,
+            message: "enter valid name",
+            trigger: "blur"
+          }
+        ],
         email: [
           {
             required: true,
@@ -59,12 +66,17 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["login"]),
-    submitLogin() {
-      const { email, password } = this.form;
-      this.login({ email, password })
+    ...mapActions(["register"]),
+    createAccount() {
+      const { name, email, password } = this.form;
+      this.register({ name, email, password })
         .then(() => {
-          this.$router.push("/");
+          this.$message({
+            showClose: true,
+            message: "Your account is ready for use 🙂. Login to continue.",
+            type: "success"
+          });
+          this.$router.push("/login");
         })
         .catch(err => {
           if (!this.errors.length) this.errors.push(err);
