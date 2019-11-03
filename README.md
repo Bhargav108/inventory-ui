@@ -13,7 +13,7 @@ It gives you simple bolerpate Admin UI to manage inventory, ui, and dashboard.
   - :heavy_check_mark: Vue Router
   - :heavy_check_mark: JWT Authentication for protected routes
   - :heavy_check_mark: Element UI Library
-  - :construction: Vue Unit Tests
+  - :construction: Unit Tests
   - :construction: Cypress E2E tests
 
 ### Use the backend at : https://github.com/manju4ever/inventory-service
