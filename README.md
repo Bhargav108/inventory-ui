@@ -1,29 +1,34 @@
-# inventory.ui
+## :ledger: A Simple Inventory Management Admin UI
 
-## Project setup
-```
-npm install
-```
+### What does this do ?
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+It gives you simple bolerpate Admin UI to manage inventory, ui, and dashboard.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Vue Integrations
+  - :heavy_check_mark: Vue.js
+  - :heavy_check_mark: Vuex
+  - :heavy_check_mark: Vue Router
+  - :heavy_check_mark: JWT Authentication for protected routes
+  - :heavy_check_mark: Element UI Library
 
-### Run your unit tests
-```
-npm run test:unit
-```
+### Use the backend at : https://github.com/manju4ever/inventory-service
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Development Usage
+1. Clone the repository and install all the dependencies
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+    `$ npm i`
+
+2. Run (runs in watch mode)
+
+    `$ npm run serve`
+
+
+### Production Usage
+1. Clone the repository and install all the dependencies
+
+    `$ npm i`
+    
+ 2. Run 
+ 
+    `$ npm run deploy`
+    
