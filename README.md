@@ -37,7 +37,8 @@ It gives you simple bolerpate Admin UI to manage inventory, ui, and dashboard.
   
  ### Project Structure
  
- src
+```bash
+src
 ├── App.vue
 ├── api
 │   ├── account.js
@@ -72,3 +73,4 @@ It gives you simple bolerpate Admin UI to manage inventory, ui, and dashboard.
     ├── Orders.vue
     ├── Register.vue
     └── Settings.vue
+```
