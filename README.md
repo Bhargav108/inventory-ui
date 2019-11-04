@@ -18,6 +18,8 @@ It gives you simple bolerpate Admin UI to manage inventory, ui, and dashboard.
   - :heavy_check_mark: [Element UI Library](https://element.eleme.io/#/en-US)
   - :construction: Unit Tests
   - :construction: Cypress E2E tests
+  - :construction: Docker build script
+  - :construction: Container on the public registry (hub.docker.com)
 
 Note: [Get the backend code here.](https://github.com/manju4ever/inventory-service)
 
