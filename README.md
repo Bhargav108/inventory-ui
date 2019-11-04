@@ -47,11 +47,12 @@ src
 ├── App.vue
 ├── api
 │   ├── account.js
-│   ├── index.js
 │   └── inventory.js
 ├── assets
 │   └── logo.png
 ├── components
+│   ├── CustomImageCell.vue
+│   ├── DialogForm.vue
 │   ├── InventoryGrid.vue
 │   ├── LoginForm.vue
 │   ├── RegisterForm.vue
@@ -60,6 +61,8 @@ src
 ├── router
 │   └── index.js
 ├── store
+│   ├── helpers
+│   │   └── data.js
 │   ├── index.js
 │   └── modules
 │       ├── account.js
