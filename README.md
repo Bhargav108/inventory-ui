@@ -15,7 +15,7 @@ It gives you simple bolerpate Admin UI to manage inventory, ui, and dashboard.
   - :heavy_check_mark: Vuex
   - :heavy_check_mark: Vue Router
   - :heavy_check_mark: JWT Authentication for protected routes
-  - :heavy_check_mark: Element UI Library
+  - :heavy_check_mark: [Element UI Library](https://element.eleme.io/#/en-US)
   - :construction: Unit Tests
   - :construction: Cypress E2E tests
 
