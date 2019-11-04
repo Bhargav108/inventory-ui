@@ -1,8 +1,10 @@
 import axios from "axios";
 
-const BASE_URI = "http://api.apphelpify.com:9090";
+console.log(process.env.VUE_APP_API_BASE);
 
-export const fetchInventory = ({ limit, offset }) =>
+const BASE_URI = process.env.VUE_APP_API_BASE;
+
+export const fetchInventory = ({ limit = 9, offset = 0 }) =>
   axios.get(`${BASE_URI}/products`);
 
 export default {

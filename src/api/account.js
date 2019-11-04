@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URI = "http://api.apphelpify.com:9090";
+const BASE_URI = process.env.VUE_APP_API_BASE;
 
 export const login = ({ email, password }) => {
   return axios.post(`${BASE_URI}/login`, { email, password });
