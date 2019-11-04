@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "deploy:ubuntu": "npn run build; pkill -f serve; nohup serve -s -l 9091 dist/ > output.log &"
+    "deploy:ubuntu": "npm run build; pkill -f serve; nohup serve -s -l 9091 dist/ > output.log &"
   },
   "dependencies": {
     "axios": "^0.19.0",
