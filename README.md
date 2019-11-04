@@ -1,5 +1,5 @@
 
-Demo Link: https://gfg-inventory-ui.firebaseapp.com/
+Demo Link: https://gfg-inventory.firebaseapp.com/
 
 ## :ledger: A Simple Inventory Management Admin UI
 
