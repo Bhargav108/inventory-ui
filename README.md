@@ -1,8 +1,8 @@
 
 Demo Link: http://api.apphelpify.com:9091
 
-`email: bob@test.com
-password: changeme`
+- email:bob@test.com
+- password:changeme`
 
 ## :ledger: A Simple Inventory Management Admin UI
 
