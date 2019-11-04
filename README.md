@@ -16,7 +16,7 @@ It gives you simple bolerpate Admin UI to manage inventory, ui, and dashboard.
   - :construction: Unit Tests
   - :construction: Cypress E2E tests
 
-### Use the backend at : https://github.com/manju4ever/inventory-service
+Note: [Get the backend code here.](https://github.com/manju4ever/inventory-service)
 
 ### Development Usage
 1. Clone the repository and install all the dependencies
