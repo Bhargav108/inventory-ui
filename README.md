@@ -38,9 +38,9 @@ Note: [Get the backend code here.](https://github.com/manju4ever/inventory-servi
 
     `$ npm i`
     
- 2. Run 
+ 2. Run (Linux Distro)
  
-    `$ npm run deploy`
+    `$ npm run deploy:ubuntu`
   
  ### Project Structure
  
