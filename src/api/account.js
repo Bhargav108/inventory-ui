@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URI = "http://localhost:9000";
+const BASE_URI = "http://api.apphelpify.com:9090";
 
 export const login = ({ email, password }) => {
   return axios.post(`${BASE_URI}/login`, { email, password });

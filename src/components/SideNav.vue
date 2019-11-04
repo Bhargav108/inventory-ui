@@ -1,6 +1,6 @@
 <template>
   <el-menu
-    :default-active="defaultPage || '/dashboard'"
+    :default-active="defaultPage"
     @open="handleOpen"
     @close="handleClose"
     :collapse="isCollapsed"
@@ -33,7 +33,7 @@
 export default {
   data() {
     return {
-      defaultPage: "/dashboard",
+      defaultPage: "/inventory",
       isCollapsed: false
     };
   },

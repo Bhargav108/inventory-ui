@@ -63,19 +63,7 @@ export default {
   data() {
     return {
       search: "",
-      openDialogId: null,
-      tableData: [
-        {
-          _id: 1,
-          title: "Nike AirMax",
-          brand: "Nike",
-          image_url: "https://source.unsplash.com/100x100/?product",
-          imageSrcList: ["https://source.unsplash.com/1366x768/?product"],
-          price: "300",
-          salePrice: "280",
-          stock: 3000
-        }
-      ]
+      openDialogId: null
     };
   },
   methods: {
@@ -84,6 +72,11 @@ export default {
     },
     openSaleEdit(id) {
       this.openDialogId = id;
+    }
+  },
+  computed: {
+    tableData() {
+      return this.$store.getters["inventory/getAllProducts"];
     }
   }
 };

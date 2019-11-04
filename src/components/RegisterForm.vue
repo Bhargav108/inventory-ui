@@ -71,7 +71,7 @@ export default {
       const { name, email, password } = this.form;
       this.register({ name, email, password })
         .then(() => {
-          this.$message({
+          this.$notify({
             showClose: true,
             message: "Your account is ready for use 🙂. Login to continue.",
             type: "success"

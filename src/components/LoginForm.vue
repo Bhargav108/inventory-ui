@@ -62,13 +62,14 @@ export default {
     ...mapActions(["login"]),
     submitLogin() {
       const { email, password } = this.form;
-      this.login({ email, password })
-        .then(() => {
-          this.$router.push("/");
-        })
-        .catch(err => {
-          if (!this.errors.length) this.errors.push(err);
-        });
+      if (email && password)
+        this.login({ email, password })
+          .then(() => {
+            this.$router.push("/");
+          })
+          .catch(err => {
+            if (!this.errors.length) this.errors.push(err);
+          });
     }
   }
 };

@@ -50,13 +50,13 @@ const router = new VueRouter({
       children: [
         {
           path: "/dashboard",
-          alias: "/",
           name: "dashboard",
           component: Dashboard
         },
         {
           path: "/inventory",
           name: "inventory",
+          alias: "/",
           component: Inventory
         },
         {
