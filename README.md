@@ -1,5 +1,8 @@
 
-Demo Link: https://gfg-inventory.firebaseapp.com/
+Demo Link: http://api.apphelpify.com:9091
+
+- email: bob@test.com
+- password: changeme
 
 ## :ledger: A Simple Inventory Management Admin UI
 
@@ -12,7 +15,7 @@ It gives you simple bolerpate Admin UI to manage inventory, ui, and dashboard.
   - :heavy_check_mark: Vuex
   - :heavy_check_mark: Vue Router
   - :heavy_check_mark: JWT Authentication for protected routes
-  - :heavy_check_mark: Element UI Library
+  - :heavy_check_mark: [Element UI Library](https://element.eleme.io/#/en-US)
   - :construction: Unit Tests
   - :construction: Cypress E2E tests
 
@@ -44,11 +47,12 @@ src
 ├── App.vue
 ├── api
 │   ├── account.js
-│   ├── index.js
 │   └── inventory.js
 ├── assets
 │   └── logo.png
 ├── components
+│   ├── CustomImageCell.vue
+│   ├── DialogForm.vue
 │   ├── InventoryGrid.vue
 │   ├── LoginForm.vue
 │   ├── RegisterForm.vue
@@ -57,6 +61,8 @@ src
 ├── router
 │   └── index.js
 ├── store
+│   ├── helpers
+│   │   └── data.js
 │   ├── index.js
 │   └── modules
 │       ├── account.js
