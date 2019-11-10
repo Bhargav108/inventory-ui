@@ -1,7 +1,7 @@
 
 Demo Link: http://api.apphelpify.com:9091
 
-- email: bob@test.com
+- email: bob@foo.com
 - password: changeme
 
 ## :ledger: A Simple Inventory Management Admin UI
@@ -18,6 +18,8 @@ It gives you simple bolerpate Admin UI to manage inventory, ui, and dashboard.
   - :heavy_check_mark: [Element UI Library](https://element.eleme.io/#/en-US)
   - :construction: Unit Tests
   - :construction: Cypress E2E tests
+  - :construction: Docker build script
+  - :construction: Container on the public registry (hub.docker.com)
 
 Note: [Get the backend code here.](https://github.com/manju4ever/inventory-service)
 
@@ -36,9 +38,9 @@ Note: [Get the backend code here.](https://github.com/manju4ever/inventory-servi
 
     `$ npm i`
     
- 2. Run 
+ 2. Run (Linux Distro)
  
-    `$ npm run deploy`
+    `$ npm run deploy:ubuntu`
   
  ### Project Structure
  
