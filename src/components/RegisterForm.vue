@@ -3,13 +3,13 @@
     <h3>Sign up to get started.</h3>
     <!-- Here goes the form -->
     <el-form :model="form" ref="loginForm" :rules="rules">
-      <el-form-item label="name" prop="name">
+      <el-form-item label="Name" prop="name">
         <el-input v-model="form.name"></el-input>
       </el-form-item>
-      <el-form-item label="email" prop="email">
+      <el-form-item label="Email" prop="email">
         <el-input v-model="form.email"></el-input>
       </el-form-item>
-      <el-form-item label="password" prop="password">
+      <el-form-item label="Password" prop="password">
         <el-input type="password" v-model="form.password"></el-input>
       </el-form-item>
       <el-form-item v-show="errors.length">

@@ -1,6 +1,6 @@
 import { storage } from "@/utils";
 import accountsAPI from "@/api/account";
-import axios from "axios";
+import axios from "@/utils/axios";
 
 const initialState = {
   user: storage.get("auth")

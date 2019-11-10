@@ -1,11 +1,6 @@
-import axios from "axios";
+import axios from "@/utils/axios";
 
-console.log(process.env.VUE_APP_API_BASE);
-
-const BASE_URI = process.env.VUE_APP_API_BASE;
-
-export const fetchInventory = ({ limit = 9, offset = 0 }) =>
-  axios.get(`${BASE_URI}/products`);
+export const fetchInventory = () => axios.get(`/products`);
 
 export default {
   fetchInventory

@@ -51,6 +51,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import CustomImageCell from "./CustomImageCell.vue";
 import DialogForm from "./DialogForm.vue";
 
@@ -66,13 +67,21 @@ export default {
       openDialogId: null
     };
   },
+  mounted() {
+    this.fetchInventory().catch(err => {
+      console.log(err);
+    });
+  },
   methods: {
     formatter(row) {
       return row.address;
     },
     openSaleEdit(id) {
       this.openDialogId = id;
-    }
+    },
+    ...mapActions({
+      fetchInventory: "inventory/fetchInventory"
+    })
   },
   computed: {
     tableData() {
