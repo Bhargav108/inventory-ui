@@ -1,14 +1,13 @@
-import inventoryData from "../helpers/data";
 import inventoryAPI from "@/api/inventory";
 const initialState = {
-  items: inventoryData
+  items: []
 };
 
 export default {
   state: initialState,
   mutations: {
-    SET_PRODUCT_ITEMS(oldState, payload) {
-      this.state.items = payload;
+    SET_PRODUCT_ITEMS(state, payload) {
+      state.items = payload;
     }
   },
   actions: {

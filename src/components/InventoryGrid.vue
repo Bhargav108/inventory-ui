@@ -10,28 +10,39 @@
       </el-table-column>
       <el-table-column align="center" prop="price" label="Price">
         <template slot-scope="scope">
-          <el-input :value="scope.row.salePrice"></el-input>
+          <p v-show="!isInCurrentEditState(scope.row._id)">{{ scope.row.price }}</p>
+          <span v-show="isInCurrentEditState(scope.row._id)">
+            <el-input :value="scope.row.price"></el-input>
+          </span>
         </template>
       </el-table-column>
       <el-table-column align="center" prop="salePrice" label="Sale Price">
         <template slot-scope="scope">
-          <span>{{ scope.row.salePrice }}</span>
-          <dialog-form :title="'Edit\t' + scope.row.title" :opened="openDialogId === scope.row._id">
+          <span>{{ scope.row.sale_price }}</span>
+          <dialog-form :title="scope.row.title" :opened="saleEditInfo._id === scope.row._id">
             <el-form>
               <el-form-item>
-                <el-input type="text" placeholder="Sale Price"></el-input>
+                <el-input type="text" :value="saleEditInfo.sale_price" placeholder="Sale Price"></el-input>
               </el-form-item>
               <el-form-item>
-                <el-date-picker type="date" placeholder="Sale Start Date"></el-date-picker>
+                <el-date-picker
+                  v-model="saleEditInfo.saleStartDate"
+                  type="date"
+                  placeholder="Sale Start Date"
+                ></el-date-picker>
               </el-form-item>
               <el-form-item>
-                <el-date-picker type="date" placeholder="Sale End Date"></el-date-picker>
+                <el-date-picker
+                  v-model="editInfo.saleEndDate"
+                  type="date"
+                  placeholder="Sale End Date"
+                ></el-date-picker>
               </el-form-item>
               <el-button type="primary">Confirm</el-button>
             </el-form>
           </dialog-form>
           <el-button
-            @click="openSaleEdit(scope.row._id)"
+            @click="openSaleEdit(scope.row)"
             size="small"
             icon="el-icon-edit"
             style="margin-left: 5px;"
@@ -40,17 +51,26 @@
       </el-table-column>
       <el-table-column align="center" prop="stock" label="Stock">
         <template slot-scope="scope">
-          <el-input :value="scope.row.stock"></el-input>
+          <p v-show="!isInCurrentEditState(scope.row._id)">{{ scope.row.stock }}</p>
+          <span v-show="isInCurrentEditState(scope.row._id)">
+            <el-input :value="scope.row.stock"></el-input>
+          </span>
         </template>
       </el-table-column>
       <el-table-column fixed="right" label="Operations" width="120" align="center">
         <template slot-scope="scope">
-          <el-button
-            icon="el-icon-edit"
-            @click="handleEdit(scope.row)"
-            type="text"
-            size="small"
-          >Edit</el-button>
+          <span v-show="!isInCurrentEditState(scope.row._id)">
+            <el-button
+              icon="el-icon-edit"
+              @click="handleEdit(scope.row)"
+              type="text"
+              size="small"
+            >Edit</el-button>
+          </span>
+          <span v-show="isInCurrentEditState(scope.row._id)">
+            <el-button icon="el-icon-check" @click="handleSave" type="text" size="small">Save</el-button>
+            <el-button icon="el-icon-close" @click="handleSave" type="text" size="small">Cancel</el-button>
+          </span>
         </template>
       </el-table-column>
     </el-table>
@@ -74,7 +94,16 @@ export default {
   data() {
     return {
       search: "",
-      openDialogId: null
+      openDialogId: null,
+      saleEditInfo: {
+        _id: null,
+        salePrice: null,
+        saleStartDate: null,
+        saleEndDate: null
+      },
+      editInfo: {
+        _id: null
+      }
     };
   },
   mounted() {
@@ -86,15 +115,23 @@ export default {
     formatter(row) {
       return row.address;
     },
-    openSaleEdit(id) {
-      this.openDialogId = id;
+    openSaleEdit(row) {
+      this.saleEditInfo = {
+        ...row
+      };
+    },
+    handleEdit(row) {
+      this.editInfo = {
+        ...row
+      };
+    },
+    isInCurrentEditState(id) {
+      return this.editInfo._id === id;
     },
     ...mapActions({
       fetchInventory: "inventory/fetchInventory"
     }),
-    handleEdit(row) {
-      console.log(row);
-    }
+    handleSave() {}
   },
   computed: {
     tableData() {
