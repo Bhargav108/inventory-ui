@@ -16,7 +16,7 @@
       <el-table-column align="center" prop="salePrice" label="Sale Price">
         <template slot-scope="scope">
           <span>{{ scope.row.salePrice }}</span>
-          <dialog-form :title="'Edit\t' + scope.row.title" :opened="openDialogId == scope.row._id">
+          <dialog-form :title="'Edit\t' + scope.row.title" :opened="openDialogId === scope.row._id">
             <el-form>
               <el-form-item>
                 <el-input type="text" placeholder="Sale Price"></el-input>
@@ -41,6 +41,16 @@
       <el-table-column align="center" prop="stock" label="Stock">
         <template slot-scope="scope">
           <el-input :value="scope.row.stock"></el-input>
+        </template>
+      </el-table-column>
+      <el-table-column fixed="right" label="Operations" width="120" align="center">
+        <template slot-scope="scope">
+          <el-button
+            icon="el-icon-edit"
+            @click="handleEdit(scope.row)"
+            type="text"
+            size="small"
+          >Edit</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -81,7 +91,10 @@ export default {
     },
     ...mapActions({
       fetchInventory: "inventory/fetchInventory"
-    })
+    }),
+    handleEdit(row) {
+      console.log(row);
+    }
   },
   computed: {
     tableData() {

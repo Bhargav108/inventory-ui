@@ -5,15 +5,23 @@
 </template>
 
 <script>
-import axios from "axios";
+import { storage } from "@/utils";
+import axios from "@/utils/axios";
 export default {
   created() {
     axios.interceptors.response.use(response => {
       if (response.status === 401) this.$router.push("/login");
       return response;
     });
-    const isLoggedIn = this.$store.getters["auth/isLoggedIn"];
-    if (isLoggedIn) this.$routers.push("/");
+    const authInfo = storage.get("auth");
+    const isLoggedIn = !!authInfo.email && !!authInfo.token;
+    if (isLoggedIn) {
+      const authInfo = storage.get("auth");
+      // Set token in the header for future requests
+      axios.defaults.headers.common = {
+        Authorization: authInfo.token
+      };
+    }
   }
 };
 </script>
