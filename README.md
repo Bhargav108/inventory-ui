@@ -1,9 +1,3 @@
-
-Demo Link: http://api.apphelpify.com:9091
-
-- email: bob@foo.com
-- password: changeme
-
 ## :ledger: A Simple Inventory Management Admin UI
 
 ### What does this do ?
