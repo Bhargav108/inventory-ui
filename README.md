@@ -2,7 +2,7 @@
 
 ### What does this do ?
 
-It gives you simple bolerpate Admin UI to manage inventory, ui, and dashboard.
+It gives you simple boilerpate Admin UI to manage inventory, ui, and dashboard.
 
 ### Vue Integrations
   - :heavy_check_mark: Vue.js
